@@ -1,0 +1,26 @@
+package com.example.homeworkfour_api_koin_nav.ui.data.di.viewModels
+
+import LocationModel
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.homeworkfour_api_koin_nav.ui.data.repository.LocationRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class LocationDetailsViewModel @Inject constructor(private val repository: LocationRepository) :
+    ViewModel() {
+    var location by mutableStateOf<LocationModel?>(null)
+        private set
+
+    fun fetchLocationDetails(id: String) {
+        viewModelScope.launch {
+            location = repository.getLocationDetails(id)
+        }
+    }
+
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JC exampleForStudy</string>
+    <string name="geek">geek</string>
+    <string name="geek_family">geek_family\n</string>
+    <string name="item">Item</string>
+    <string name="hello_this_is_home_screen">Hello this is home Screen!</string>
+    <string name="go_to_screen">Go to Screen</string>
+</resources>
